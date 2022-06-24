@@ -18,11 +18,11 @@ How many different artists are present in each billboard?
 ```{r}
 x <- wiki_hot_100s |>
   as_tibble()
-```
-
-
-```{r}
 x |> 
-  mutate(year = parse_number(year))
+  mutate(year = parse_number(year)) |> 
+  group_by(year) |> 
+  distinct(artist) |> 
+  summarize(distinct_artist = n()) |> 
+  arrange(desc(distinct_artist))
 ```
 
