@@ -1,0 +1,21 @@
+---
+title: "Untitled"
+output: html_document
+date: '2022-06-24'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(billboard)
+library(tidyverse)
+
+?billboard
+```
+
+```{r}
+glimpse(wiki_hot_100s)
+```
+
