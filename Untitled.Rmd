@@ -14,8 +14,15 @@ library(tidyverse)
 
 ?billboard
 ```
+How many different artists are present in each billboard?
+```{r}
+x <- wiki_hot_100s |>
+  as_tibble()
+```
+
 
 ```{r}
-x <- wiki_hot_100s |> as.tibble()
+x |> 
+  mutate(year = parse_number(year))
 ```
 

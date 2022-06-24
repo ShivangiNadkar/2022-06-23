@@ -379,12 +379,25 @@ library(tidyverse)</code></pre>
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <pre class="r"><code>?billboard</code></pre>
-<pre class="r"><code>x &lt;- wiki_hot_100s |&gt; as.tibble()</code></pre>
-<pre><code>## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
-## Please use `as_tibble()` instead.
-## The signature and semantics have changed, see `?as_tibble`.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+<p>How many different artists are present in each billboard?</p>
+<pre class="r"><code>x &lt;- wiki_hot_100s |&gt;
+  as_tibble()</code></pre>
+<pre class="r"><code>x |&gt; 
+  mutate(year = parse_number(year))</code></pre>
+<pre><code>## # A tibble: 5,701 × 4
+##    no    title                     artist               year
+##    &lt;chr&gt; &lt;chr&gt;                     &lt;chr&gt;               &lt;dbl&gt;
+##  1 1     Theme from A Summer Place Percy Faith          1960
+##  2 2     He&#39;ll Have to Go          Jim Reeves           1960
+##  3 3     Cathy&#39;s Clown             The Everly Brothers  1960
+##  4 4     Running Bear              Johnny Preston       1960
+##  5 5     Teen Angel                Mark Dinning         1960
+##  6 6     I&#39;m Sorry                 Brenda Lee           1960
+##  7 7     It&#39;s Now or Never         Elvis Presley        1960
+##  8 8     Handy Man                 Jimmy Jones          1960
+##  9 9     Stuck on You              Elvis Presley        1960
+## 10 10    The Twist                 Chubby Checker       1960
+## # … with 5,691 more rows</code></pre>
 
 
 
