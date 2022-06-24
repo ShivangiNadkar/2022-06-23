@@ -16,6 +16,6 @@ library(tidyverse)
 ```
 
 ```{r}
-glimpse(wiki_hot_100s)
+x <- wiki_hot_100s |> as.tibble()
 ```
 
